@@ -8,26 +8,35 @@
 </head>
 
 <body>
-    <div id="left">
-        <h1>Akta Pracownicze</h1>
-        <?php
-        //skrypt1
-        ?>
-        <hr>
-        <h3>Dokumenty pracownika</h3>
-        <a download="cv.txt">Pobierz</a>
-        <h1>Liczba zatrudnionych pracowników</h1>
-        <p>
+    <main>
+        <div id="left">
+            <h1>Akta Pracownicze</h1>
             <?php
-            //skrypt2
+            $conn = mysqli_connect('localhost', 'root', '', 'firma');
+
             ?>
-        </p>
-    </div>
-    <div id="right">
-        <?php
-        //skrypt3
-        ?>
-    </div>
+            <hr>
+            <h3>Dokumenty pracownika</h3>
+            <a href="cv.txt" download>Pobierz</a>
+            <h1>Liczba zatrudnionych pracowników</h1>
+            <p>
+                <?php
+                $q2 = "SELECT COUNT(*) FROM pracownicy;";
+                $liczba = mysqli_query($conn, $q2);
+                foreach ($liczba as $l) {
+                    foreach ($l as $l1) {
+                        echo $l1;
+                    }
+                }
+                ?>
+            </p>
+        </div>
+        <div id="right">
+            <?php
+            //skrypt3
+            ?>
+        </div>
+    </main>
     <footer>
         Autorem aplikacji jest: Stanisław Fiedoruk 5J
         <ul>
