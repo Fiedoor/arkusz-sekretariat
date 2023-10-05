@@ -1,4 +1,4 @@
 Kwerenda 1: SELECT imie,nazwisko,adres,miasto,czyRODO,czyBadania FROM pracownicy WHERE id=2;
 Kwerenda 2: SELECT COUNT(*) from pracownicy;
 Kwerenda 3: SELECT id,imie,nazwisko from pracownicy WHERE id=2;
-Kwerenda 4: SELECT pracownicy.id,nazwa,opis FROM pracownicy INNER JOIN stanowiska ON pracownicy.stanowiska_id=stanowiska.id;
+Kwerenda 4: SELECT pracownicy.id,nazwa,opis FROM pracownicy JOIN stanowiska ON pracownicy.stanowiska_id=stanowiska.id WHERE pracownicy.id=2;
